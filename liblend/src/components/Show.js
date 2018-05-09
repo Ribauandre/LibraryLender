@@ -30,7 +30,9 @@ class Show extends Component {
 
     const { isbn, title, author,location, description, published_year, publisher } = this.state.book;
 
-    this.state.book.location = false;
+    this.setState({
+     book: {location: false}
+})
 
     axios.put('/api/book/'+this.props.match.params.id, { isbn, title, author, location, description, published_year, publisher })
       .then((result) => {
