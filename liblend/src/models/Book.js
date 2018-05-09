@@ -4,6 +4,7 @@ var BookSchema = new mongoose.Schema({
   isbn: String,
   title: String,
   author: String,
+  location: Boolean,
   description: String,
   published_date: { type: Date },
   publisher: String,

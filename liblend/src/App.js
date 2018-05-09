@@ -19,6 +19,11 @@ class App extends Component {
         console.log(this.state.books);
       });
   }
+  onButtonPress = () => {
+    this.setState({
+      text: this.state.mimin
+    });
+  }
 
   render() {
     return (
@@ -31,6 +36,7 @@ class App extends Component {
           </div>
           <div class="panel-body">
             <h4><Link to="/create"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Book</Link></h4>
+            <h4><Link to="/ShowReturn"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Return Book</Link></h4>
             <table class="table table-stripe">
               <thead>
                 <tr>

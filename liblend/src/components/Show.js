@@ -26,6 +26,17 @@ class Show extends Component {
         this.props.history.push("/")
       });
   }
+    onButtonPress = () => {
+
+    const { isbn, title, author,location, description, published_year, publisher } = this.state.book;
+
+    this.state.book.location = false;
+
+    axios.put('/api/book/'+this.props.match.params.id, { isbn, title, author, location, description, published_year, publisher })
+      .then((result) => {
+        this.props.history.push("/show/"+this.props.match.params.id)
+      });
+  }
 
   render() {
     return (
@@ -50,7 +61,7 @@ class Show extends Component {
               <dt>Publisher:</dt>
               <dd>{this.state.book.publisher}</dd>
             </dl>
-            <Link to={`/edit/${this.state.book._id}`} class="btn btn-success">Edit</Link>&nbsp;
+            <button onPress={this.onButtonPress} class="btn btn-success">Borrow</button>
             <button onClick={this.delete.bind(this, this.state.book._id)} class="btn btn-danger">Delete</button>
           </div>
         </div>
