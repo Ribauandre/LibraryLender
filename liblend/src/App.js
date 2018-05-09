@@ -19,11 +19,14 @@ class App extends Component {
         console.log(this.state.books);
       });
   }
-  onButtonPress = () => {
+  onButtonPress(){
     this.setState({
-      text: this.state.mimin
+    books: this.state.books.filter(function(book) {
+        return this.state.book.location == false;
+      })
     });
-  }
+}
+
 
   render() {
     return (
@@ -35,8 +38,14 @@ class App extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/create"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Book</Link></h4>
-            <h4><Link to="/ShowReturn"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Return Book</Link></h4>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <Link to="/create">
+         <button class="btn btn-secondary" >
+         Add Book
+         </button>
+         </Link>
+          <button onPress={this.onButtonPress} class="btn btn-secondary">Return a book</button>
+          </div>
             <table class="table table-stripe">
               <thead>
                 <tr>
