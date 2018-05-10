@@ -1,6 +1,6 @@
 {
   "name": "liblend",
-   "homepage" : "http://myname.github.io/myapp",
+  "homepage": "http://myname.github.io/myapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,7 +31,6 @@
     "react-scripts": "1.1.4",
     "rest": "^2.0.0",
     "serve-favicon": "^2.5.0"
-
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,7 +48,6 @@
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^4.0.0-alpha.6"
   },
-  
   "jest": {
     "transform": {
       "^.+\\.js?$": "babel-jest"
