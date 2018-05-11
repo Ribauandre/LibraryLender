@@ -1,6 +1,6 @@
 {
 		"name": "mern-crud",
-		"homepage": "http://ribauandre.github.io/LibraryLend",
+		"homepage": "https://ribauandre.github.io/LibraryLender/",
 		"version": "0.1.0",
 		"private": true,
 		"dependencies": {
