@@ -1,6 +1,6 @@
 {
-    "name": "mern-crud",
-    "homepage" : "http://ribauandre.github.io/LibraryLend",
+		"name": "mern-crud",
+		"homepage": "http://ribauandre.github.io/LibraryLend",
 		"version": "0.1.0",
 		"private": true,
 		"dependencies": {
@@ -36,9 +36,12 @@
 				"start": "node ./bin/www",
 				"build": "react-scripts build",
 				"test": "react-scripts test --env=jsdom",
+				"predeploy": "npm run build",
+				"deploy": "gh-pages -d build",
 				"eject": "react-scripts eject"
 		},
 		"devDependencies": {
-				"bootstrap": "^3.3.7"
+				"bootstrap": "^3.3.7",
+				"gh-pages": "^1.1.0"
 		}
 }
