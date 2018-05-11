@@ -44,12 +44,7 @@ class Create extends Component {
             </h3>
           </div>
           <div class="panel-body">
-
-         <Link to="/">
-         <button class="btn btn-secondary" >
-         Book List
-         </button>
-         </Link>
+            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Book List</Link></h4>
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
                 <label for="isbn">ISBN:</label>
