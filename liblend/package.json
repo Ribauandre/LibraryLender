@@ -1,6 +1,6 @@
 {
 		"name": "liblend",
-		"homepage": "https://ribauandre.github.io/LibraryLender/",
+		"homepage": "https://ribauandre.github.io",
 		"version": "0.1.0",
 		"private": true,
 		"dependencies": {
