@@ -18,6 +18,18 @@ class Show extends Component {
         console.log(this.state.book);
       });
   }
+Button(book) {
+    if (book.location) {
+        return 
+           <button onPress={onBorrow(book)} class="btn btn-success">Return</button>;
+    }
+   else {
+        return 
+           <button onPress={onReturn(book)} class="btn btn-success">Borrow</button>;
+       
+    }
+}
+
 
   delete(id){
     console.log(id);
@@ -26,20 +38,33 @@ class Show extends Component {
         this.props.history.push("/")
       });
   }
-    onButtonPress = () => {
 
-    const { isbn, title, author,location, description, published_year, publisher } = this.state.book;
+  onBorrow(book){
+    const state = this.state.book
+    state[book.location] = true;
+    this.setState({book:state});
+    Submit(book)
+  }
+   onReturn(book){
+    const state = this.state.book
+    state[book.location] = false;
+    this.setState({book:state});
+    Submit(book)
+  }
+   
+  
+  
+  
+   Submit(e){
+    e.preventDefault();
 
-    this.setState({
-     book: {location: false}
-})
+    const { location, isbn, title, author, description, published_year, publisher } = this.state.book;
 
-    axios.put('/api/book/'+this.props.match.params.id, { isbn, title, author, location, description, published_year, publisher })
+    axios.put('/api/book/'+this.props.match.params.id, { location, isbn, title, author, description, published_year, publisher })
       .then((result) => {
         this.props.history.push("/show/"+this.props.match.params.id)
       });
   }
-
   render() {
     return (
       <div class="container">
@@ -63,8 +88,8 @@ class Show extends Component {
               <dt>Publisher:</dt>
               <dd>{this.state.book.publisher}</dd>
             </dl>
-            <button onPress={this.onButtonPress} class="btn btn-success">Borrow</button>
-            <button onClick={this.delete.bind(this, this.state.book._id)} class="btn btn-danger">Delete</button>
+            {Button(this.state.book)}
+           
           </div>
         </div>
       </div>

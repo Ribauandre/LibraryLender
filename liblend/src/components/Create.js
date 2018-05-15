@@ -8,6 +8,7 @@ class Create extends Component {
   constructor() {
     super();
     this.state = {
+      location: false,
       isbn: '',
       title: '',
       author: '',
