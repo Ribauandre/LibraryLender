@@ -21,11 +21,11 @@ class Show extends Component {
 Button(book) {
     if (book.location) {
         return 
-           <button onPress={onBorrow(book)} class="btn btn-success">Return</button>;
+           <button onPress={onBorrow(this.state.book)} class="btn btn-success">Return</button>;
     }
    else {
         return 
-           <button onPress={onReturn(book)} class="btn btn-success">Borrow</button>;
+           <button onPress={onReturn(this.state.book)} class="btn btn-success">Borrow</button>;
        
     }
 }
