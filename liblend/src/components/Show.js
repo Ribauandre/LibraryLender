@@ -18,7 +18,16 @@ class Show extends Component {
         console.log(this.state.book);
       });
   }
-Button(book) {
+  delete(id){
+    console.log(id);
+    axios.delete('/api/book/'+id)
+      .then((result) => {
+        this.props.history.push("/")
+      });
+  }
+
+  render() {
+    function Button(book) {
     if (book.location) {
         return 
            <button onPress={onBorrow(this.state.book)} class="btn btn-success">Return</button>;
@@ -31,21 +40,15 @@ Button(book) {
 }
 
 
-  delete(id){
-    console.log(id);
-    axios.delete('/api/book/'+id)
-      .then((result) => {
-        this.props.history.push("/")
-      });
-  }
+  
 
-  onBorrow(book){
+  function onBorrow(book){
     const state = this.state.book
     state[book.location] = true;
     this.setState({book:state});
     Submit(book)
   }
-   onReturn(book){
+  function onReturn(book){
     const state = this.state.book
     state[book.location] = false;
     this.setState({book:state});
@@ -55,7 +58,7 @@ Button(book) {
   
   
   
-   Submit(e){
+  function Submit(e){
     e.preventDefault();
 
     const { location, isbn, title, author, description, published_year, publisher } = this.state.book;
@@ -65,7 +68,6 @@ Button(book) {
         this.props.history.push("/show/"+this.props.match.params.id)
       });
   }
-  render() {
     return (
       <div class="container">
         <div class="panel panel-default">
