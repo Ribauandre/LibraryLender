@@ -4,14 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 
+// DB connection
 var mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://LibLend:super19@libcluster-p3tai.mongodb.net/test?', { promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb+srv://LibLend:super19@libcluster-p3tai.mongodb.net/test?', {})
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
+
+
+
 var book = require('./routes/book');
 var app = express();
+
 
 
 app.use(logger('dev'));
@@ -19,14 +23,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'build')));
 
-
 app.use('/api/book', book);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
- res.send(err)
   next(err);
 });
 
@@ -38,7 +40,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
- res.send(err)
+  res.json({ error: err })
 });
 
 module.exports = app;

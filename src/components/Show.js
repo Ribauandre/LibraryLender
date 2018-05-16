@@ -18,6 +18,7 @@ class Show extends Component {
         console.log(this.state.book);
       });
   }
+
   delete(id){
     console.log(id);
     axios.delete('/api/book/'+id)
@@ -27,48 +28,6 @@ class Show extends Component {
   }
 
   render() {
-   /** function Button(book) {
-    if (book.location) {
-        return 
-           <button onPress={onBorrow(this.state.book)} class="btn btn-success">Return</button>;
-    }
-   else {
-        return 
-           <button onPress={onReturn(this.state.book)} class="btn btn-success">Borrow</button>;
-       
-    }
-}
-
-
-  
-
-  function onBorrow(book){
-    const state = this.state.book
-    state[book.location] = true;
-    this.setState({book:state});
-    Submit(book)
-  }
-  function onReturn(book){
-    const state = this.state.book
-    state[book.location] = false;
-    this.setState({book:state});
-    Submit(book)
-  }
-   
-  
-  
-  
-  function Submit(e){
-    e.preventDefault();
-
-    const { location, isbn, title, author, description, published_year, publisher } = this.state.book;
-
-    axios.put('/api/book/'+this.props.match.params.id, { location, isbn, title, author, description, published_year, publisher })
-      .then((result) => {
-        this.props.history.push("/show/"+this.props.match.params.id)
-      });
-  }
-  */
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -91,8 +50,8 @@ class Show extends Component {
               <dt>Publisher:</dt>
               <dd>{this.state.book.publisher}</dd>
             </dl>
-     
-           
+            <Link to={`/edit/${this.state.book._id}`} class="btn btn-success">Edit</Link>&nbsp;
+            <button onClick={this.delete.bind(this, this.state.book._id)} class="btn btn-danger">Delete</button>
           </div>
         </div>
       </div>
