@@ -44,7 +44,7 @@ class App extends Component {
          Add Book
          </button>
          </Link>
-          <button onPress={this.onButtonPress} class="btn btn-secondary">Return a book</button>
+          <button onPress={/**this.onButtonPress*/} class="btn btn-secondary">Return a book</button>
           </div>
             <table class="table table-stripe">
               <thead>
