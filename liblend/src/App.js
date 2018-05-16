@@ -22,7 +22,7 @@ class App extends Component {
 onButtonPress(){
   this.setState({
     books: this.state.books.map.filter(function(book) {
-        return this.state.book.location == false;
+        return //this.state.book.location == false;
       })
     });
 }
