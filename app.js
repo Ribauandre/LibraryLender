@@ -5,6 +5,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://LibLend:super19@libcluster-p3tai.mongodb.net/test?', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))

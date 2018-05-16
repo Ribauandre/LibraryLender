@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('mern-app:server');
+var app = require('../app.js');
+var debug = require('debug')('LibraryLender:server');
 var http = require('http');
 
 /**
@@ -80,7 +80,6 @@ function onError(error) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
