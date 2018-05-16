@@ -27,7 +27,7 @@ class Show extends Component {
   }
 
   render() {
-    function Button(book) {
+   /** function Button(book) {
     if (book.location) {
         return 
            <button onPress={onBorrow(this.state.book)} class="btn btn-success">Return</button>;
@@ -68,6 +68,7 @@ class Show extends Component {
         this.props.history.push("/show/"+this.props.match.params.id)
       });
   }
+  */
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -90,7 +91,7 @@ class Show extends Component {
               <dt>Publisher:</dt>
               <dd>{this.state.book.publisher}</dd>
             </dl>
-            {Button(this.state.book)}
+          {/**Button(this.state.book)*/} 
            
           </div>
         </div>

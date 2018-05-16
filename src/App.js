@@ -19,6 +19,14 @@ class App extends Component {
         console.log(this.state.books);
       });
   }
+//onButtonPress(){
+  //this.setState({
+    //books: this.state.books.map.filter(function(book) {
+      //  return //this.state.book.location == false;
+      //})
+    //});
+//}
+
 
   render() {
     return (
@@ -30,7 +38,14 @@ class App extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/create"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Book</Link></h4>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <Link to="/create">
+         <button class="btn btn-secondary" >
+         Add Book
+         </button>
+         </Link>
+          <button onPress={this.onButtonPress} class="btn btn-secondary">Return a book</button>
+          </div>
             <table class="table table-stripe">
               <thead>
                 <tr>

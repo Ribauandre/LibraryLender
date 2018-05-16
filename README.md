@@ -1,1 +1,1 @@
-Mern Stack Application Practice Library App
+MERN stack application practice
