@@ -19,8 +19,8 @@ class App extends Component {
         console.log(this.state.books);
       });
   }
-  onButtonPress(){
-    this.setState({
+onButtonPress(){
+  this.setState({
     books: this.state.books.map.filter(function(book) {
         return this.state.book.location == false;
       })

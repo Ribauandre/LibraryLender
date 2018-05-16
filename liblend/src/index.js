@@ -17,7 +17,7 @@ ReactDOM.render(
         <Route path='/edit/:id' component={Edit} />
         <Route path='/create' component={Create} />
         <Route path='/show/:id' component={Show} />
-       ReactDOM.render(<button>Despacito</button>, document.getElementById('root'));
+      
       </div>
   </Router>,
   //test
