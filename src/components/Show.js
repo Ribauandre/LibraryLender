@@ -91,7 +91,7 @@ class Show extends Component {
               <dt>Publisher:</dt>
               <dd>{this.state.book.publisher}</dd>
             </dl>
-          {/**Button(this.state.book)*/} 
+     
            
           </div>
         </div>
