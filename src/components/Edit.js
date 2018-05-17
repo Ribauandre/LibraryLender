@@ -9,6 +9,8 @@ class Edit extends Component {
     this.state = {
       book: {}
     };
+    this.ButtonRen = this.ButtonRen.bind(this)
+    this.ReturnBook = this.ReturnBook.bind(this)
   }
 
   componentDidMount() {
@@ -24,7 +26,7 @@ class Edit extends Component {
     state[e.target.name] = e.target.value;
     this.setState({book:state});
   }
-
+  
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -35,8 +37,26 @@ class Edit extends Component {
         this.props.history.push("/")
       });
   }
+  ReturnBook = (e) =>{
+    e.preventDefault();
+    const {location, isbn, title, author, description, published_year, publisher } = this.state.book;
+
+    axios.put('/api/book/'+this.props.match.params.id, { location: 'in', isbn, title, author, description, published_year, publisher })
+      .then((result) => {
+        this.props.history.push("/")
+      });
+  }
+
+  ButtonRen(loc){
+    if(loc == "in"){
+      return <button type="submit" class="btn btn-success">Borrow Book</button>;
+    } else{
+      return  <button onClick={this.ReturnBook} class="btn btn-danger">Return Book</button>;
+    }
+  }
 
   render() {
+    
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -60,7 +80,7 @@ class Edit extends Component {
               <dd>{this.state.book.publisher}</dd>
               <dt>Status:</dt>
               <dd>{this.state.book.location}</dd>
-              <button type="submit" class="btn btn-success">Borrow Book</button>
+              {this.ButtonRen(this.state.book.location)}
             </form>
           </div>
         </div>
