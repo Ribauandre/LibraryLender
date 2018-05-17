@@ -4,19 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
-// DB connection
-var mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://LibLend:super19@libcluster-p3tai.mongodb.net/test?', {})
+mongoose.Promise = require('bluebird');
+mongoose.connect('mongodb+srv://LibLend:super19@libcluster-p3tai.mongodb.net/test?', { })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
-
-
 var book = require('./routes/book');
 var app = express();
-
-
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -25,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api/book', book);
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler  //"homepage": "https://ribauandre.github.io/LibraryLender/",
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
@@ -40,7 +34,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.json({ error: err })
+  res.render('error');
 });
 
 module.exports = app;

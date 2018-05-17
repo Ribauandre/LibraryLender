@@ -8,6 +8,7 @@ class Create extends Component {
   constructor() {
     super();
     this.state = {
+      location: '',
       isbn: '',
       title: '',
       author: '',
@@ -25,16 +26,16 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { isbn, title, author, description, published_year, publisher } = this.state;
+    const { location, isbn, title, author, description, published_year, publisher } = this.state;
 
-    axios.post('/api/book', { isbn, title, author, description, published_year, publisher })
+    axios.post('/api/book', {location: 'in', isbn, title, author, description, published_year, publisher })
       .then((result) => {
         this.props.history.push("/")
       });
   }
 
   render() {
-    const { isbn, title, author, description, published_year, publisher } = this.state;
+    const {location, isbn, title, author, description, published_year, publisher } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">

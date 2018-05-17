@@ -1,49 +1,31 @@
 {
-		"name": "LibraryLender",
-		"homepage": "https://ribauandre.github.io/LibraryLender/",
-		"version": "0.1.0",
-		"private": true,
-		"dependencies": {
-				"ajv": "^6.4.0",
-				"axios": "^0.18.0",
-				"babel-cli": "^6.23.0",
-				"bluebird": "^3.5.1",
-				"body-parser": "^1.18.2",
-				"bson": "^2.0.6",
-				"ejs": "^2.6.1",
-				"express": "^4.16.3",
-				"global-tunnel": "^1.2.0",
-				"jest": "^22.4.3",
-				"jquery": "^3.3.1",
-				"jsx-transform": "^2.4.0",
-				"kerberos": "0.0.23",
-				"mongodb": "^3.0.7",
-				"mongodb-core": "^3.0.7",
-				"mongoose": "^5.0.17",
-				"morgan": "^1.9.0",
-				"node-gyp": "^3.6.2",
-				"node-rest-client": "^3.1.0",
-				"popper.js": "^1.14.3",
-				"react": "^16.3.2",
-				"react-bootstrap": "^0.32.1",
-				"react-dom": "^16.3.2",
-				"react-route": "^1.0.3",
-				"react-router": "^4.2.0",
-				"react-router-dom": "^4.2.2",
-				"react-scripts": "1.1.4",
-				"rest": "^2.0.0",
-				"serve-favicon": "^2.5.0"
-		},
-		"scripts": {
-				"start": "node ./bin/www",
-				"build": "react-scripts build",
-				"test": "react-scripts test --env=jsdom",
-				"predeploy": "npm run build",
-				"deploy": "gh-pages -d build",
-				"eject": "react-scripts eject"
-		},
-		"devDependencies": {
-				"bootstrap": "^3.3.7",
-				"gh-pages": "^1.1.0"
-		}
+  "name": "LibraryLender",
+  "version": "0.1.0",
+  "private": true,
+ 
+  "dependencies": {
+    "axios": "^0.17.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "gh-pages": "^1.1.0",
+    "mongoose": "^5.0.17",
+    "morgan": "^1.9.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.14",
+    "serve-favicon": "^2.4.5"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
 }

@@ -26,6 +26,23 @@ class Show extends Component {
         this.props.history.push("/")
       });
   }
+  onChange = (e) => {
+	    const state = this.state.book
+	    state[e.target.name] = e.target.value;
+	    this.setState({book:state});
+	  }
+
+	  onSubmit = (e) => {
+	    e.preventDefault();
+
+	    const {location, isbn, title, author, description, published_year, publisher } = this.state.book;
+
+	    axios.put('/api/book/'+this.props.match.params.id, { location: 'out', isbn, title, author, description, published_year, publisher })
+	      .then((result) => {
+	        this.props.history.push("/show/"+this.props.match.params.id)
+	      });
+	  }
+
 
   render() {
     return (
@@ -49,8 +66,10 @@ class Show extends Component {
               <dd>{this.state.book.published_year}</dd>
               <dt>Publisher:</dt>
               <dd>{this.state.book.publisher}</dd>
+              <dt>Status:</dt>
+              <dd>{this.state.book.location}</dd>
             </dl>
-            <Link to={`/edit/${this.state.book._id}`} class="btn btn-success">Edit</Link>&nbsp;
+            <button type="submit" class="btn btn-success">Return book</Link>&nbsp;
             <button onClick={this.delete.bind(this, this.state.book._id)} class="btn btn-danger">Delete</button>
           </div>
         </div>
