@@ -2,7 +2,7 @@
   "name": "library-lender",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ribauandre.github.io/LibraryLender",
+  "homepage": "https://ribauandre.github.io/LibraryLender/",
   "dependencies": {
     "axios": "^0.17.0",
     "bluebird": "^3.5.1",
