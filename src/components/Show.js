@@ -69,7 +69,7 @@ class Show extends Component {
               <dt>Status:</dt>
               <dd>{this.state.book.location}</dd>
             </dl>
-            <button type="submit" class="btn btn-success">Return book</Link>&nbsp;
+            <button type="submit" class="btn btn-success">Return book&nbsp;</button>
             <button onClick={this.delete.bind(this, this.state.book._id)} class="btn btn-danger">Delete</button>
           </div>
         </div>
