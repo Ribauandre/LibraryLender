@@ -22,9 +22,9 @@ class App extends Component {
   }
   StatusRen(loc){
     if(loc == "in"){
-      return <td><p style="color: green;">{loc}</p></td>;
+      return <td><p style={{color: 'green'}}>{loc}</p></td>;
     } else{
-      return <td><p style="color: red;">{loc}</p></td>;
+      return <td><p style={{color: 'red'}}>{loc}</p></td>;
     }
   }
 
