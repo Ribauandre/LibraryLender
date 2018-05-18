@@ -22,9 +22,9 @@ class App extends Component {
   }
   StatusRen(loc){
     if(loc == "in"){
-      return <td><p style="color: green;">{this.state.book.location}</p></td>;
+      return <td><p style="color: green;">{book.location}</p></td>;
     } else{
-      return <td><p style="color: red;">{this.state.book.location}</p></td>;
+      return <td><p style="color: red;">{book.location}</p></td>;
     }
   }
 
@@ -54,7 +54,7 @@ class App extends Component {
                     <td><Link to={`/edit/${book._id}`}>{book.isbn}</Link></td>
                     <td>{book.title}</td>
                     <td>{book.author}</td>
-                    {this.StatusRen(this.state.book.location)}
+                    {this.StatusRen(book.location)}
                   </tr>
                 )}
               </tbody>
