@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       books: []
     };
+    this.StatusRen = this.StatusRen.bind(this)
   }
 
   componentDidMount() {
@@ -18,6 +19,13 @@ class App extends Component {
         this.setState({ books: res.data });
         console.log(this.state.books);
       });
+  }
+  StatusRen(loc){
+    if(loc == "in"){
+      return <td><p style="color: green;">{this.state.book.location}</p></td>;
+    } else{
+      return <td><p style="color: red;">{this.state.book.location}</p></td>;
+    }
   }
 
   render() {
@@ -46,7 +54,7 @@ class App extends Component {
                     <td><Link to={`/edit/${book._id}`}>{book.isbn}</Link></td>
                     <td>{book.title}</td>
                     <td>{book.author}</td>
-                    <td>{book.location}</td>
+                    {this.StatusRen(this.state.book.location)}
                   </tr>
                 )}
               </tbody>

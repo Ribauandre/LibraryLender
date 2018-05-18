@@ -13,6 +13,15 @@ animation: AnimationName 30s ease infinite;
 th {
   font-family: 'Josefin Sans', sans-serif;
 }
+dt {
+  font-family: 'Josefin Sans', sans-serif;
+}
+dd{
+  font-family: 'Josefin Sans', sans-serif;
+}
+td{
+  font-family: 'Josefin Sans', sans-serif;
+}
 
 
 @-webkit-keyframes AnimationName {
