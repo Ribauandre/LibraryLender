@@ -26,6 +26,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "engines": { "node": "9.11.1"},
   "devDependencies": {
     "bootstrap": "^3.3.7"
   }
