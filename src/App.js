@@ -54,7 +54,7 @@ class App extends Component {
                     <td><Link to={`/edit/${book._id}`}>{book.isbn}</Link></td>
                     <td>{book.title}</td>
                     <td>{book.author}</td>
-                    {this.StatusRen(book.location)}
+                    <Link to={`/edit/${book._id}`}>{this.StatusRen(book.location)}</Link>
                   </tr>
                 )}
               </tbody>
