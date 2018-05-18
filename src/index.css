@@ -2,8 +2,8 @@ body {
   margin: 20px 0;
   padding: 0;
   font-family: 'Anton', sans-serif;
-  background: linear-gradient(270deg, #246655, #318e76, #28d9ab);
-background-size: 600% 600%;
+  background: linear-gradient(270deg, #00aeb7, #03c4ce, #00d4df, #00e4f0);
+  background-size: 800% 800%;
 
   -webkit-animation: AnimationName 30s ease infinite;
 -moz-animation: AnimationName 30s ease infinite;
@@ -11,16 +11,19 @@ animation: AnimationName 30s ease infinite;
   
 }
 th {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'BenchNine', sans-serif;
 }
 dt {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'BenchNine', sans-serif;
 }
 dd{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'BenchNine', sans-serif;
 }
 td{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'BenchNine', sans-serif;
+}
+lable{
+  font-family: 'BenchNine', sans-serif;
 }
 
 
