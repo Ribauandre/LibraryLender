@@ -2,7 +2,6 @@
   "name": "library-lender",
   "version": "0.1.0",
   "private": true,
- 
   "dependencies": {
     "axios": "^0.17.0",
     "bluebird": "^3.5.1",
@@ -18,9 +17,8 @@
     "serve-favicon": "^2.4.5",
     "bootstrap": "^3.3.7"
   },
-  
   "scripts": {
-    "dev" : "react-scripts start",
+    "dev": "react-scripts start",
     "start": "node ./bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -28,12 +26,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  
-  "engines": { 
+  "engines": {
     "node": "9.11.1"
-  
   },
-
   "devDependencies": {
     "bootstrap": "^3.3.7"
   }
