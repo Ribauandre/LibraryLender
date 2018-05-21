@@ -61,13 +61,13 @@ class App extends Component {
             </table>
           </div>
         </div>
-      </div>
-      <footer class="w3-container w3-grey w3-center w3-margin-top">
+        <footer class="w3-container w3-blue w3-center w3-margin-top">
       <p>Find me on linkedin, Github and <a href="https://ribauandre.com">RibauAndre.com</a> </p>
       <a href="https://www.linkedin.com/in/ribauandre/" class="fa fa-linkedin w3-hover-opacity"></a>
       <a href="https://github.com/Ribauandre" class="fa fa-github w3-hover-opacity"></a>
-  
     </footer>
+      </div>
+      
     );
   }
 }
