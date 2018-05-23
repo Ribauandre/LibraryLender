@@ -18,7 +18,9 @@ class App extends Component {
       .then(res => {
         this.setState({ books: res.data });
         console.log(this.state.books);
+        document.getElementsByClassName("load").style.visibility = "hidden";
       });
+      
   }
   StatusRen(loc){
     if(loc == "in"){
@@ -51,6 +53,7 @@ class App extends Component {
               <tbody>
                 {this.state.books.map(book =>
                   <tr>
+                    <td class="load">Loading...</td>
                     <td><Link to={`/edit/${book._id}`}>{book.isbn}</Link></td>
                     <td>{book.title}</td>
                     <td>{book.author}</td>
